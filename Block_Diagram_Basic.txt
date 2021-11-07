@@ -1,0 +1,13 @@
+@startuml
+
+title Block Diagram
+
+LEDS: 8 LEDS
+PROCESSOR: AtMega328p
+SENSOR: HCSR04
+
+PROCESSOR -> LEDS
+PROCESSOR -> SENSOR: Trigger
+SENSOR -> PROCESSOR: Echo
+
+@enduml
