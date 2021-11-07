@@ -1,0 +1,23 @@
+@startuml
+
+title Flowchart Basic
+
+Start: Init IO Pins
+
+Set_Trigger_Line: Set Line High Start timer or NOOP or Stall
+Reset_Trigger_Line: Set Line Low Stop timer 
+Watch_Echo: Poll Echo Pin, Wait for change
+Start_Timer: If Echo pulls high, start timer peripheral, or count clock cycles
+Stop_Timer: When echo pulls low, stop timing
+Calculate: Test distance = (n * 340) / 2
+
+Start -> Set_Trigger_Line
+Set_Trigger_Line -> Reset_Trigger_Line
+Reset_Trigger_Line -> Watch_Echo
+Watch_Echo -> Start_Timer
+Start_Timer -> Stop_Timer
+Stop_Timer -> Calculate
+
+
+
+@enduml
